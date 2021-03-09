@@ -1,10 +1,10 @@
 import { Controller, Get, Req, Res } from '@nestjs/common';
-import { Request } from 'express';
+import { Request, Response } from 'express';
 
 @Controller('cats')
 export class CatsController {
     @Get()
-    findAll(@Req() request: Request, @Res() response): void {
+    findAll(@Req() request: Request, @Res() response: Response): void {
         response.json({
             cats: []
         })
